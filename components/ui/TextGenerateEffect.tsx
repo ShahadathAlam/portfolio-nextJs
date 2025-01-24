@@ -12,6 +12,20 @@ export const TextGenerateEffect = ({
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
+  // useEffect(() => {
+
+  //   console.log(wordsArray);
+  //   animate(
+  //     "span",
+  //     {
+  //       opacity: 1,
+  //     },
+  //     {
+  //       duration: 2,
+  //       delay: stagger(0.2),
+  //     }
+  //   );
+  // }, [scope.current]);
   useEffect(() => {
     console.log(wordsArray);
     animate(
@@ -24,8 +38,7 @@ export const TextGenerateEffect = ({
         delay: stagger(0.2),
       }
     );
-  }, [scope.current]);
-
+  }, [animate, wordsArray]);
   const renderWords = () => {
     return (
       <motion.div ref={scope}>
@@ -34,8 +47,9 @@ export const TextGenerateEffect = ({
             <motion.span
               key={word + idx}
               // change here if idx is greater than 3, change the text color to #CBACF9
-              className={` ${idx > 3 ? "text-purple" : "dark:text-white text-black"
-                } opacity-0`}
+              className={` ${
+                idx > 3 ? "text-purple" : "dark:text-white text-black"
+              } opacity-0`}
             >
               {word}{" "}
             </motion.span>

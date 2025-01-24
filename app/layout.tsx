@@ -3,13 +3,16 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Shahadath's Portfolio",
-  description: "Showcasing expertise in modern web development with",
+  description:
+    "A showcase of innovative web development skills and modern design expertise.",
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
+        <link rel="icon" href="/jsm-logo.ico" sizes="any" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
@@ -27,7 +30,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="relative min-h-screen">
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
