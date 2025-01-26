@@ -3,10 +3,11 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <section className="pb-20 pt-36" id="hero">
       {/** UI: Spotlights */}
       <div>
         <Spotlight
@@ -49,16 +50,16 @@ const Hero = () => {
             Node.js.
           </p>
 
-          <a href="#about">
+          <Link href="#projects">
             <MagicButton
               title="Explore My Projects"
               icon={<FaLocationArrow />}
               position="right"
             />
-          </a>
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
