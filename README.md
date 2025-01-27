@@ -13,6 +13,9 @@
   </div>
 
   <h3 align="center">A Modern Next.js Portfolio</h3>
+  <div align="center">
+     You can view the live version of the portfolio app by visiting <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>Shahadath's Portfolio</b></a> . Feel free to explore the features of the portfolio and see how everything works in the live environment.
+    </div>
 
 </div>
 
@@ -25,6 +28,7 @@
 5. 🕸️ [Code to Copy](#snippets)
 6. 🔗 [Assets](#links)
 7. 🚀 [Challenges](#challenges)
+8. ✅ [Deployment](#deployment)
 
 ## <a name="introduction">🤖 Introduction</a>
 
@@ -680,5 +684,44 @@ The issue was resolved by adding the `pointer-events: none;` CSS property to the
 
 4. **Test Responsiveness:**
    - Ensure the fix works across different screen sizes and does not negatively impact the user experience.
+
+## <a name="deployment">✅ Deployment</a>
+
+Deploying the **Portfolio Project** on Vercel was mostly straightforward, but I encountered an issue related to the Node.js version. Here's the step-by-step explanation of the challenge and how I resolved it.
+
+### Challenge:
+
+After pushing the code to Vercel for deployment, I noticed that the deployment failed or didn't behave as expected. Upon checking the logs and testing the app locally, I realized that the issue was related to the version mismatch between the Node.js version I was using locally (v18.18.0) and the version Vercel was using (v22.x).
+
+The application worked perfectly fine in my local development environment with Node.js v18.18.0, but Vercel defaulted to using Node.js v22.x, which led to the following potential issues:
+
+- **Dependency Incompatibility**: Some dependencies might be using APIs or features specific to Node.js v18, and Node.js v22 could have different behaviors or breaking changes that were not compatible with the app.
+- **Build Failures**: Some packages or build processes might not have been compatible with the Node.js v22 runtime.
+
+### Solution:
+
+To solve the issue and ensure consistency between my local environment and Vercel, I manually set the Node.js version in Vercel.
+
+#### Steps Taken:
+
+1. **Identifying the Node.js Version on Vercel**:
+
+   - I checked the Node.js version Vercel was using by looking at the deployment logs and found that it was using version v22.x, which was not the version I was using locally.
+
+2. **Changing the Node.js Version**:
+
+   - To match the Node.js version I was using locally (v18.18.0), I went to the **Vercel Dashboard**.
+   - In the project settings, I navigated to the **Environment** section.
+   - There, under **Node.js Version**, I selected **18.x** from the available options.
+
+3. **Redeploying the Application**:
+   - After changing the Node.js version in Vercel settings, I redeployed the project.
+   - The deployment succeeded without any issues, and the app worked as expected on Vercel.
+
+### Conclusion:
+
+The problem was simply a mismatch in the Node.js versions between my local environment and the Vercel deployment environment. By explicitly selecting the correct Node.js version in Vercel, I was able to resolve the issue and successfully deploy my portfolio project.
+
+If you're facing similar issues, always make sure the Node.js version is consistent across your development and deployment environments. Setting the Node.js version in **Vercel Project Settings** ensures that your app runs with the expected version during deployment.
 
 ---
