@@ -14,7 +14,7 @@
 
   <h3 align="center">A Modern Next.js Portfolio</h3>
   <div align="center">
-     You can view the live version of the portfolio app by visiting <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>Shahadath's Portfolio</b></a> . Feel free to explore the features of the portfolio and see how everything works in the live environment.
+     You can view the live version of the portfolio app by visiting <a href="https://shahadath-portfolio.vercel.app" target="_blank"><b>Shahadath's Portfolio</b></a> . Feel free to explore the features of the portfolio and see how everything works in the live environment.
     </div>
 
 </div>
