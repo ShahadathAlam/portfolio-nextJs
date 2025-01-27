@@ -31,7 +31,7 @@
 
 ## 🚨 Tutorial
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>. 
+This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
 
 If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
 
@@ -58,7 +58,7 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 👉 **Bento Grid**: Modern layout presenting personal information using cutting-edge CSS design techniques.
 
-👉 **3D Elements**:  Interactive 3D design elements, such as a GitHub-style globe and card hover effects, adding depth and engagement.
+👉 **3D Elements**: Interactive 3D design elements, such as a GitHub-style globe and card hover effects, adding depth and engagement.
 
 👉 **Testimonials**: Dynamic testimonials area with scrolling or animated content for enhanced engagement.
 
@@ -68,7 +68,7 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 👉 **Responsiveness**: Seamless adaptability across all devices, ensuring optimal viewing experience for every user.
 
-and many more, including code architecture and reusability 
+and many more, including code architecture and reusability
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -641,7 +641,6 @@ export default config;
 
 </details>
 
-
 <details>
 <summary><code>Linear Gradient</code></summary>
 
@@ -654,14 +653,15 @@ style={{
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
 ```
-</details>
 
+</details>
 
 ## <a name="links">🔗 Assets</a>
 
 Assets used in the project can be found [here](https://drive.google.com/file/d/1ZmtiMilUYTp1wkiXWMFX6AUk-msE981-/view?usp=sharing)
 
 ## <a name="more">🚀 More</a>
+
 **Advance your skills with Next.js Pro Course**
 
 Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning experience. They're packed with detailed explanations, cool features, and exercises to boost your skills. Give it a go!
@@ -669,3 +669,88 @@ Enjoyed creating this project? Dive deeper into our PRO courses for a richer lea
 <a href="https://www.jsmastery.pro/ultimate-next-course" target="_blank">
 <img src="https://i.ibb.co/804sPK6/Image-720.png" alt="Project Banner">
 </a>
+
+---
+
+# Issues and Fixes
+
+## Table of Contents
+
+1. [Problem](#problem)
+2. [Why the Problem Occurred](#why-the-problem-occurred)
+3. [How the Problem Occurred](#how-the-problem-occurred)
+4. [How the Problem Was Solved](#how-the-problem-was-solved)
+5. [Key Takeaways](#key-takeaways)
+
+## Problem
+
+The `footer-grid.svg` was positioned in such a way that it interfered with user interactions on the page. Specifically, the `footer-grid.svg` was blocking the input field, making it unclickable and preventing users from typing into the field.
+
+---
+
+## Why the Problem Occurred
+
+The issue occurred because the `footer-grid.svg` was styled as an absolutely positioned element and rendered on top of other elements, including the input field. As a result:
+
+- The SVG acted as a "click-blocker," intercepting pointer events and preventing interactions with the input field beneath it.
+
+---
+
+## How the Problem Occurred
+
+1. The `footer-grid.svg` was included inside a `<div>` with the following styles:
+   - `absolute` positioning.
+   - Positioned at the `left-0` and `bottom-0` to span across the full width of the page.
+   - Given a `z-index` value higher than other elements (implicitly or explicitly).
+2. The `<Image>` inside the `div` had `w-full` and `h-full` styles, ensuring it covered the full dimensions of its container.
+3. Since the `footer-grid.svg` occupied the same space as the input field and was not transparent to pointer events, it blocked the user from interacting with the input field.
+
+---
+
+## How the Problem Was Solved
+
+The issue was resolved by adding the `pointer-events: none;` CSS property to the `<div>` wrapping the `footer-grid.svg`. This ensures that the `footer-grid.svg` does not intercept any pointer events (such as clicks) and allows those events to pass through to the underlying elements.
+
+### Final Code:
+
+```jsx
+<div className="absolute left-0 bottom-0 w-full min-h-96 opacity-30 pointer-events-none">
+  <Image
+    src="/footer-grid.svg"
+    alt="grid"
+    width={128}
+    height={128}
+    className="w-full h-full"
+  />
+</div>
+```
+
+### Explanation of Changes:
+
+1. **`pointer-events-none`:**
+   - This Tailwind class sets the `pointer-events` CSS property to `none`, making the `footer-grid.svg` and its container invisible to mouse interactions.
+2. **Effect:**
+   - Users can now click on the input field without any interference from the `footer-grid.svg`.
+
+---
+
+## Key Takeaways
+
+1. **Understand Layering in CSS:**
+
+   - Absolutely positioned elements with overlapping dimensions can block interactions with underlying elements.
+
+2. **Use `pointer-events` Wisely:**
+
+   - The `pointer-events` property is a useful tool for managing how elements interact with user input.
+   - `pointer-events: none;` makes an element completely transparent to pointer events.
+
+3. **Debugging Interaction Issues:**
+
+   - Inspect overlapping elements in the browser's developer tools to identify what is blocking interactions.
+   - Check the stacking context (`z-index`) and dimensions of the elements involved.
+
+4. **Test Responsiveness:**
+   - Ensure the fix works across different screen sizes and does not negatively impact the user experience.
+
+---

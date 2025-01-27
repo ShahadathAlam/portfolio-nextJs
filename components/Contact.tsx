@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MagicButton from "./MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
+import ContactForm from "./contact-form";
 
 export default function Contact() {
   return (
@@ -24,13 +25,15 @@ export default function Contact() {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <Link href="mailto:shahadathalam@ymail.com" target="_blank">
+        {/* <Link href="mailto:shahadathalam@ymail.com" target="_blank">
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             position="right"
           />
-        </Link>
+        </Link> */}
+
+        <ContactForm />
       </div>
     </section>
   );
