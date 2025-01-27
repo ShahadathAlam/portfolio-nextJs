@@ -711,7 +711,7 @@ To solve the issue and ensure consistency between my local environment and Verce
 2. **Changing the Node.js Version**:
 
    - To match the Node.js version I was using locally (v18.18.0), I went to the **Vercel Dashboard**.
-   - In the project settings, I navigated to the **Environment** section.
+   - In the project settings, I navigated to the **General** section.
    - There, under **Node.js Version**, I selected **18.x** from the available options.
 
 3. **Redeploying the Application**:
