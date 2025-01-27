@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative min-h-screen">
+          <div className="relative min-h-screen overflow-hidden bg-black-100">
+            <Hero />
             {children}
             <Footer />
           </div>

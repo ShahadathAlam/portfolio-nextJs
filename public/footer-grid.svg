@@ -1,4 +1,4 @@
-<!-- <svg width="1260" height="863" viewBox="0 0 1260 863" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1260" height="863" viewBox="0 0 1260 863" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M308.031 502.47H215.452V599.235H308.031V502.47Z" fill="url(#paint0_radial_1_67)" fill-opacity="0.06"/>
 <path d="M678.346 212.176H585.767V308.941H678.346V212.176Z" fill="url(#paint1_radial_1_67)" fill-opacity="0.06"/>
 <path d="M585.767 792.762H493.188V889.527H585.767V792.762Z" fill="url(#paint2_radial_1_67)" fill-opacity="0.06"/>
@@ -31,4 +31,4 @@
 <stop offset="1" stop-color="white" stop-opacity="0"/>
 </radialGradient>
 </defs>
-</svg> -->
+</svg>
