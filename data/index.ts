@@ -94,7 +94,23 @@ export const projects = [
       "/zod.svg",
       "/nextauth.svg",
     ],
-    link: "/ui.anonymous-message.com",
+    link: "https://anonymous-message-lake.vercel.app/",
+  },
+
+  {
+    id: 2,
+    title: "Threads - Social Networking App",
+    des: "A text-based application designed for users to share updates, join public conversations and create threads within communities. Threads facilitates real-time interactions and structured discussions through features such as nested comments, user profiles, community management and live notifications. Built with modern technologies for optimal performance and scalability.",
+    img: "/p2.png",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/mongodb.svg",
+      "/mongoose.svg",
+      "/zod.svg",
+    ],
+    link: "https://threads-eta-six.vercel.app/",
   },
 ];
 
